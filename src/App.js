@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CreateUser from './pages/CreateUser';
 
 export default function App() {
   const [location, setLocation] = useState({});
@@ -15,6 +16,7 @@ export default function App() {
 
   return (
     <>
+      <CreateUser />
       Latitude: {location.latitude} <br />
       Longitude: {location.longitude}
     </>
