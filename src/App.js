@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import CreateUser from './pages/CreateUser';
+import { Provider } from 'react-redux';
+
+import Sidebar from './components/Sidebar';
+import Video from './components/Video';
+
+import store from './store';
 
 export default function App() {
   const [location, setLocation] = useState({});
@@ -16,7 +21,11 @@ export default function App() {
 
   return (
     <>
-      <CreateUser />
+      <Provider store={store}>
+        <Video />
+        <Sidebar />
+      </Provider>
+
       Latitude: {location.latitude} <br />
       Longitude: {location.longitude}
     </>
